@@ -10,9 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" media="screen">
 
     <!-- API SCORM -->
-    <script type="text/javascript" src="../js/exe_jquery.js"></script>
-    <script type="text/javascript" src="../js/common_i18n.js"></script>
-    <script type="text/javascript" src="../js/common.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
     <script type="text/javascript" src="../js/SCOFunctions.js"></script>
 </head>
@@ -30,7 +28,8 @@
 
     <!-- Quiz 1 -->
     <div id="quiz-1">
-        <h2>Quiz 1</h2>
+        <h2>Quiz del estudiante:</h2>
+        <h3 id="userName"></h3>
         <!-- Question 1 -->
         <div class="card quizlib-question">
             <div class="quizlib-question-title">1. Cuantos años tiene Diego?</div>
@@ -120,6 +119,9 @@
     <!-- Quizlib -->
     <script type="text/javascript" src="./js/quizlib.js"></script>
     <script type="text/javascript" src="./js/multi-quiz.js"></script>
+
+    <!-- USE API SCORM -->
+    <script src="./js/getDataSCORM.js"></script>
 </body>
 
 </html>

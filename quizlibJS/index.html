@@ -29,7 +29,7 @@
 
     <!-- Quiz Container -->
     <div id="quiz">
-        <h2>Quiz</h2>
+        <h2>Quiz del estudiante:</h2>
         <h3 id="userName"></h3>
         <!-- Question 1 -->
         <div class="card quizlib-question">
@@ -70,35 +70,9 @@
     <script type="text/javascript" src="./js/quizlib.js"></script>
     <script type="text/javascript" src="./js/simple-quiz.js"></script>
 
-    <!-- Free Style -->
-    <script>
-        window.addEventListener("load", function(event) {
-            console.log("Todos los recursos del LMS terminaron de cargar!");
+    <!-- USE API SCORM -->
+    <script src="./js/getDataSCORM.js"></script>
 
-            (document.getElementById("region-main")) ? console.log("Encuentra region principal de Moodle"): console.log("No se encuentra region principal de Moodle");
-            (document.getElementById("scormpage")) ? console.log("Encuentra SCORM PAGE"): console.log("No se encuentra SCORM PAGE");
-            (document.getElementById("tocbox")) ? console.log("Encuentra SCORM tocbox"): console.log("No se encuentra SCORM tocbox");
-            (document.getElementById("toctree")) ? console.log("Encuentra SCORM toctree"): console.log("No se encuentra SCORM toctree");
-
-
-
-            //var iframeSCORM = window.document.querySelectorAll("iframe#scorm_object")[0];
-            var iframeSCORM = window.document.getElementById("scorm_content").children[0];
-            if (iframeSCORM) {
-                console.log("iFrame del SCORM encontrado");
-                var iframeSCORM_Content = iframeSCORM.contentWindow;
-                var iframeSCORM_Document = iframeSCORM_Content.document;
-                // Busca el campo para llenar con el nombre del usuario
-                var userFieldSCORM = iframeSCORM_Document.getElementById('userName');
-                if (userFieldSCORM) {
-                    console.log("El campo para llenar con el nombre del usuario se ha encontrado");
-                    userFieldSCORM.innerHTML = iframeSCORM_Content.scorm.get("cmi.core.student_name");
-                }
-            } else {
-                console.log("El iFrame del SCORM no se ha encontrado");
-            }
-        });
-    </script>
 </body>
 
 </html>
