@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizlib Multi-Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./css/quizlib.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" media="screen">
+
+    <!-- API SCORM -->
+    <script type="text/javascript" src="../js/exe_jquery.js"></script>
+    <script type="text/javascript" src="../js/common_i18n.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
+    <script type="text/javascript" src="../js/SCOFunctions.js"></script>
+</head>
+
+<body class="exe-scorm">
+    <script type="text/javascript">
+        document.body.className += " js";
+        jQuery(function() {
+            loadPage()
+        })
+    </script>
+    <div id="quiz-result" class="card">
+        Has puntuado <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span id="quiz-max-score"></span><br/>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div id="quiz-1">
+        <h2>Quiz 1</h2>
+        <!-- Question 1 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">1. Cuantos años tiene Diego?</div>
+            <div class="quizlib-question-answers">
+                <input type="text" name="q1">
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">2. El padre de tu enemigo...</div>
+            <div class="quizlib-question-answers">
+                <ul>
+                    <li><label><input type="radio" name="q2" value="a"> PHP</label></li>
+                    <li><label><input type="radio" name="q2" value="b"> Depende de lo que vayas a desarrollar</label></li>
+                    <li><label><input type="radio" name="q2" value="c"> Javascript</label></li>
+                    <li><label><input type="radio" name="q2" value="d"> Python</label></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">3. ¿Qué factores contribuirán al fin de la humanidad tal y como la conocemos?</div>
+            <div class="quizlib-question-answers">
+                <ul>
+                    <li><label><input type="checkbox" name="q3" value="a"> Calentamiento global</label></li>
+                    <li><label><input type="checkbox" name="q3" value="b"> Descontrol diplomatico para una guerra mundial</label></li>
+                    <li><label><input type="checkbox" name="q3" value="c"> Los gatos</label></li>
+                    <li><label><input type="checkbox" name="q3" value="d"> Desbordamiento de avances en la inteligencia artificial</label></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Answer Button. Here, we pass the ID of the quiz element (the parent of this button) to the showResults function.  -->
+        <button type="button" onclick="showResults(this.parentNode.id);">Comprobar las respuestas</button>
+    </div>
+
+
+    <!-- Quiz 2 -->
+    <div id="quiz-2">
+        <h2>Quiz 2</h2>
+        <!-- Question 1 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">1. Alguna pregunta</div>
+            <div class="quizlib-question-answers">
+                <ul>
+                    <li><label><input type="radio" name="q1" value="a"> alguna respuesta...</label></li>
+                    <li><label><input type="radio" name="q1" value="b"> ¿o es este?</label></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">2. ¡Adivina el color favorito de Diego!</div>
+            <div class="quizlib-question-answers">
+                <input type="text" name="q2">
+            </div>
+        </div>
+        <!-- Answer Button. Note that the showResults call is exactly the same as question 1. Nice!  -->
+        <button type="button" onclick="showResults(this.parentNode.id);">Comprobar las respuestas</button>
+    </div>
+
+
+    <!-- Quiz 3 -->
+    <div id="quiz-3">
+        <h2>Quiz 3</h2>
+        <!-- Question 1 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">1. Cuanto es 2 + 2?</div>
+            <div class="quizlib-question-answers">
+                <input type="text" name="q1">
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="card quizlib-question">
+            <div class="quizlib-question-title">2. Cual es mi numero favorito!</div>
+            <div class="quizlib-question-answers">
+                <ul>
+                    <li><label><input type="radio" name="q2" value="a"> 3</label></li>
+                    <li><label><input type="radio" name="q2" value="b"> 7</label></li>
+                    <li><label><input type="radio" name="q2" value="c"> 9</label></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Answer Button. Note that the showResults call is exactly the same as question 1. Nice!  -->
+        <button type="button" onclick="showResults(this.parentNode.id);">Comprobar las respuestas</button>
+    </div>
+
+    <!-- Quizlib -->
+    <script type="text/javascript" src="./js/quizlib.js"></script>
+    <script type="text/javascript" src="./js/multi-quiz.js"></script>
+</body>
+
+</html>
