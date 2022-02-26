@@ -57,19 +57,24 @@ The XSD files for SCORM 1.2 are not strictly valid and may cause errors in some 
       <file href="maquetaRED/index.html"/>
       <dependency identifierref="COMMON_FILES"/>
 		</resource>
-    <resource identifier="resource_2" type="webcontent" adlcp:scormtype="sco" href="maquetaRED/content.html">
+    <resource identifier="resource_2" type="webcontent" adlcp:scormtype="sco" href="maquetaRED/intro.html">
+      <file href="maquetaRED/intro.html"/>
+      <dependency identifierref="COMMON_FILES"/>
+    </resource>
+    <resource identifier="resource_3" type="webcontent" adlcp:scormtype="sco" href="maquetaRED/content.html">
       <file href="maquetaRED/content.html"/>
       <dependency identifierref="COMMON_FILES"/>
     </resource>
     <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormtype="asset">
-      <file href="maquetaRED/css/content.css"/>
       <file href="maquetaRED/css/cover.css"/>
+      <file href="maquetaRED/css/intro.css"/>
+      <file href="maquetaRED/css/content.css"/>
       <file href="maquetaRED/css/darkMode.css"/>
       <file href="maquetaRED/fonts/CenturyGothic.ttf"/>
       <file href="maquetaRED/js/darkMode.js"/>
-      <file href="js/SCORM_API_wrapper.js"/>
-      <file href="js/SCOFunctions.js"/>
-      <file href="quizlibJS/js/getDataSCORM.js"/>
+      <file href="maquetaRED/js/SCORM_API_wrapper.js"/>
+      <file href="maquetaRED/js/SCOFunctions.js"/>
+      <file href="maquetaRED/js/main.js"/>
     </resource>
 	</resources>
 </manifest>
