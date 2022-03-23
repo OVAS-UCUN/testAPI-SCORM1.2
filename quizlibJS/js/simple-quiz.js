@@ -21,24 +21,24 @@ function showResults() {
         else if (quizScorePercent >= 25) quizResultElement.style.backgroundColor = '#ff9800';
         else if (quizScorePercent >= 0) quizResultElement.style.backgroundColor = '#f44336';
 
-        console.log(quizScorePercent);
+        console.log(quizScorePercent /= 2);
         scorm.SetScoreRaw(quizScorePercent + "");
-        scorm.SetScoreMax(100);
+        scorm.SetScoreMax(50);
         scorm.SetScoreMin(0);
 
         var mode = scorm.GetMode();
         if (mode != "review" && mode != "browse") {
-            if (quizScorePercent < 50) {
+            if (quizScorePercent < 70) {
                 scorm.SetCompletionScormActivity("incomplete");
                 scorm.SetSuccessStatus("failed");
                 if (scorm.version == '2004') {
-                    scorm.SetInteractionValue("cmi.score.scaled", quizScorePercent / 100);
+                    scorm.SetInteractionValue("cmi.score.scaled", quizScorePercent / 50);
                 }
             } else {
                 scorm.SetCompletionScormActivity("completed");
                 scorm.SetSuccessStatus("passed");
                 if (scorm.version == '2004') {
-                    scorm.SetInteractionValue("cmi.score.scaled", quizScorePercent / 100);
+                    scorm.SetInteractionValue("cmi.score.scaled", quizScorePercent / 50);
                 }
             }
 
@@ -48,6 +48,7 @@ function showResults() {
         exitPageStatus = true;
         scorm.save();
         scorm.quit();
+        doQuit();
 
         // Highlight questions according to whether they were correctly answered. The callback allows us to highlight/show the correct answer
         quiz.highlightResults(handleAnswers);
